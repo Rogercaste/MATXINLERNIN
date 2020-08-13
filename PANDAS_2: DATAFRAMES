@@ -1,0 +1,25 @@
+#els dataframes son les unitats basiques a panda, objectes que representen ta tabular, com excl files
+
+#com s'ha fet en el codi anterior, els dataframes poden sortir de llocs com  excel
+#tanmateix, també els podem crear nosaltres així:
+
+
+import pandas as pd
+weather_data = {
+    'day': ['1/1/2017','1/2/2017','1/3/2017','1/4/2017','1/5/2017','1/6/2017'],
+    'temperature': [32,35,28,24,32,31],
+    'windspeed': [6,7,2,7,4,2],
+    'event': ['Rain', 'Sunny', 'Snow','Snow','Rain', 'Sunny']
+}
+df = pd.DataFrame(weather_data)
+
+#df.shape  dona el valor de files i columnes, així que podem establir
+
+df.shape = (rows, columns)
+
+#df.head(n), df.tail(n), df[n:m] són totes opcions útils (PROVALES!)
+
+#df.columns et diu els noms de les columnes, vamos el q has dit tu pero amb docs tb ho fa
+
+#df['event'] et dona el contiungut de la columna
+
