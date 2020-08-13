@@ -1,0 +1,19 @@
+#Codi que funciona per a trobar màxims  i mitjanes de datasets
+ 
+U#sarem el dataset proveït per ibm al curs MLPPI:
+
+import matplotlib.pyplot as plt
+import pandas as pd
+import pylab as pl
+import numpy as np
+%matplotlib inline
+
+!wget -O FuelConsumption.csv https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/ML0101ENv3/labs/FuelConsumptionCo2.csv
+    
+df = pd.read_csv("FuelConsumption.csv")
+df.head()
+df.describe()
+
+df['ENGINESIZE'].max()
+df['MODELYEAR'][df['CYLINDERS']<=6]
+df['FUELCONSUMPTION_CITY'].mean()
