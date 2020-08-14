@@ -15,11 +15,43 @@ df = pd.DataFrame(weather_data)
 
 #df.shape  dona el valor de files i columnes, així que podem establir
 
-df.shape = (rows, columns)
+(rows, columns) = df.shape
 
 #df.head(n), df.tail(n), df[n:m] són totes opcions útils (PROVALES!)
 
+#PRECAUCIÓ:  df[n:m] inclou n però no m,
+#d'aquesta manera, [2:5] inclouria la 3a pero no la 6a fila (noti que 0 és l'inicial)
+
 #df.columns et diu els noms de les columnes, vamos el q has dit tu pero amb docs tb ho fa
 
-#df['event'] et dona el contiungut de la columna
+#df.label o df['label'] et dona el contiungut de la columna, provaho amb label=day
+    # una sofisticació és ferho amb diverses columnes: df [['event','day','temperature']], et calen dos brackets thats it
+    
+##OPERACIONS
+
+# trobar maxims: df['temperature'].max()
+# trobar mitjanes: df['temperature'].max()
+# trobar sigma/desviació estandard: df['temperature'].std ()
+# MOLT wapo el que fa df.describe(), dona tot de info estadistica+
+
+#pots crear un altre data set a partir del que ja tens amb
+    # df[df.temperature == df.temperature.max()] convalidable amb canviar punts per brackets i liarla pardissima
+        # una sofisticació seria obtenir la informació de les altres columnes quan una condició a una certa columna s'ha complert
+        #EXEMPLE
+        
+df[['day','temperature']][df.temperature==df.temperature.max()]
+
+# de totes maneres, tens els codis per a tota operacio basica a 
+#https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html
+
+
+#INDEXOS
+
+#en la manera en la que les dades estan indexades també t'hi pots ficar
+
+#df.set_index('day') crea un nou dataframe on la columna day és el nou index
+# d'altra banda df.set_index('day', inplace=True) canvia l'índex
+#  per últim df.reset_index(inplace=True) el reseteja
+
+
 
